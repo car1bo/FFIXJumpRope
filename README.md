@@ -16,3 +16,21 @@ To run this script, open a PowerShell editor such as VS Code or PowerShell ISE, 
 
 ## Script tuning
 This script has been tested to work, but if it fails at any point during the jump run, you can find the relevant jump section and alter the jump timings if necessary
+
+## FAQ
+
+### When running there is an error about Execution Policy or that running scripts is disabled on this system
+
+You might see an error like this:
+
+`File C:\TEMP\Awesome-Script.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at http://go.microsoft.com/fwlink/?LinkID=135170.
+ CategoryInfo : SecurityError: (:) [], ParentContainsErrorRecordException
+ FullyQualifiedErrorId : UnauthorizedAccess`
+
+ This is a good thing - it means Windows is protecting your PC from random scripts from the internet! There's a good article at https://thinkpowershell.com/powershell-execution-policy-explained which explains how it works. There is a way to temporarily allow just this script to run without turning off any security measures in windows, here's how:
+
+ - Open the PowerShell ISE program in Windows, you should be able to find it in the start menu. Note this is different to a normal PowerShell terminal, and has more features. 
+ - Within PowerShell ISE, click the open script button, and browse to where you downloaded the script on your PC and open it
+ - At this point you should see all of the code of the script on your screen, In the terminal pane at the command prompt in blue, type in `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process`
+ - You may get a warning about security, you can accept this. Because the previous command is scoped to the currently running process, it will have no effect on the security of the PC
+ - Click the green start button to launch the script!
