@@ -2,7 +2,7 @@
 # This script assumes keyboard input rather than controller.
 
 $Latency = 890      # Adjust latency to suit, somewhere in the region 800-900
-$ActionKey = 'x'    # The action key for FFIX, usually the x key on the keyboard. for enter use $ActionKey = '~'
+$ActionKey = 'x'    # The action key for FFIX, usually the x key on the keyboard. For the enter key use $ActionKey = '~'
 $StartDelay = 3     # Seconds the script will delay before starting. Increase if needed.
 
 # Types required for keyboard input and higher precision sleep
