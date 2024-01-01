@@ -1,18 +1,16 @@
 # FFIXJumpRope
-
 This script has been created to help with the Hail to the King achievement in Final Fantasy IX.
-Others have created versions for Playstation RemotePlay which inspired this script, but this one works with the XBox (PC) version.
+Others have created versions for Playstation RemotePlay which inspired this script, but this one works with the XBox (PC) version. This Version has not been tested with Playstation RemotePlay
 
 ## Script Configuration
-
 There are some configuration options available to suit your environment, you can change these variables at the top of the script by editing the file:
 
 - `$Latency = 890`      Adjust latency to suit, somewhere in the region 800-900
-- `$ActionKey = 'x'`    The action key for FFIX, usually the x key on the keyboard.
-- `$StartDelay = 3 `    Seconds the script will delay before starting. Increase if needed.
+- `$ActionKey = 'x'`    The action key for FFIX, usually the x key on the keyboard. For the enter key use `$ActionKey = '~'`
+- `$StartDelay = 3`    Seconds the script will delay before starting. Increase if needed.
 
 ## Running the script
-To run this script, open a PowerShell editor such as VS Code or PowerShell ISE, and launch FFIX. Talk to the NPCs at the jump rope mini game, and wait at the part where it says "0 times" In the PowerShell editor, run the script then quickly click back into the FFIX game. The script should then send keyboard inputs to the game and jump the rope. Alternatively, the Powershell Script can be ran from a PowerShell window, or by Right Clicking and running it, though you may need to unblock it in the file properties first.
+To run this script, open a PowerShell editor such as VS Code or PowerShell ISE, and launch FFIX. Talk to the NPCs at the jump rope mini game, and wait at the part where it says "0 times". In the PowerShell editor, run the script then quickly click back into the FFIX game. The script should then send keyboard inputs to the game and jump the rope. Alternatively, the Powershell Script can be ran from a PowerShell window, or by Right Clicking and running it, though you may need to unblock it in the file properties first.
 
 ## Script tuning
 This script has been tested to work, but if it fails at any point during the jump run, you can find the relevant jump section and alter the jump timings if necessary
@@ -20,7 +18,6 @@ This script has been tested to work, but if it fails at any point during the jum
 ## FAQ
 
 ### When running there is an error about Execution Policy or that running scripts is disabled on this system
-
 You might see an error like this:
 
 `File C:\TEMP\Awesome-Script.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at http://go.microsoft.com/fwlink/?LinkID=135170.
@@ -34,3 +31,11 @@ You might see an error like this:
  - At this point you should see all of the code of the script on your screen, In the terminal pane at the command prompt in blue, type in `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process`
  - You may get a warning about security, you can accept this. Because the previous command is scoped to the currently running process, it will have no effect on the security of the PC
  - Click the green start button to launch the script!
+
+ ### The script runs but doesn't seem to do anything
+ If you can see the script running, but it isn't controlling Vivi, did you set the `$ActionKey` in the script to match the button used for Vivi to jump the rope?
+
+ To troubleshoot the script, open a fresh Microsoft Notepad, start the script, then click into the notepad window. The script should output the action key for each jump into notepad. If it works in notepad, double check that you have the correct `$ActionKey` value entered into the script
+
+ ### How do I stop the script?
+ You can stop this script by clicking the red stop button in PowerShell ISE or by using Control+C on the keyboard in a PowerShell Window
